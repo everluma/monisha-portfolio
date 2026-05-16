@@ -5,147 +5,192 @@ import {
   FaBookOpen,
   FaLaptopCode,
   FaRocket,
+  FaBrain,
+  FaPalette,
 } from "react-icons/fa";
+
+const cards = [
+  {
+    icon: <FaLaptopCode />,
+    title: "10+ Projects",
+    desc: "Built responsive and creative web projects during my learning journey.",
+  },
+
+  {
+    icon: <FaCode />,
+    title: "MERN Stack Learner",
+    desc: "Currently exploring React, Node.js, MongoDB, Express, and Next.js.",
+  },
+
+  {
+    icon: <FaBookOpen />,
+    title: "Book Lover",
+    desc: "Love detective stories, thrillers, science fiction, and travel literature.",
+  },
+
+  {
+    icon: <FaRocket />,
+    title: "Future Goal",
+    desc: "Dreaming of becoming a professional full stack developer.",
+  },
+
+  {
+    icon: <FaBrain />,
+    title: "Problem Solver",
+    desc: "Mathematics background helps me think logically and analytically.",
+  },
+
+  {
+    icon: <FaPalette />,
+    title: "UI Enthusiast",
+    desc: "Passionate about premium UI design and smooth user experiences.",
+  },
+];
 
 const About = () => {
   return (
     <section
       id="about"
-      className="py-24 px-6 bg-[#0b1120]"
+      className="relative py-28 px-6 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+
+      {/* Background Glow */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-pink-500/20 blur-[120px] rounded-full"></div>
+
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/20 blur-[120px] rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Title */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl font-bold">
-            About <span className="text-pink-500">Me</span>
+
+          <h2 className="text-5xl md:text-6xl font-black">
+
+            About{" "}
+
+            <span className="bg-gradient-to-r from-pink-500 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+              Me
+            </span>
           </h2>
 
-          <div className="w-28 h-1 bg-pink-500 mx-auto mt-4 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-5 rounded-full"></div>
         </motion.div>
 
-        {/* Main About Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-lg shadow-2xl"
-        >
+        {/* Main Layout */}
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-          {/* Intro */}
-          <div className="space-y-6">
+          {/* LEFT STORY */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
 
-            <h3 className="text-3xl font-bold leading-snug">
-              Hi, I'm{" "}
-              <span className="text-pink-500">
-                Farjana Aktar Monisha
-              </span>{" "}
-              👋
-            </h3>
+            {/* Glass Card */}
+            <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[35px] p-10 shadow-2xl relative overflow-hidden">
 
-            <p className="text-gray-300 text-lg leading-relaxed">
-              I'm a passionate frontend web developer and a Mathematics student
-              at Carmichael College who loves building modern, responsive,
-              and visually appealing websites.
-            </p>
+              {/* Glow */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-pink-500/20 blur-[100px] rounded-full"></div>
 
-            <p className="text-gray-400 text-lg leading-relaxed">
-              My journey started with basic computer learning — Excel,
-              PowerPoint, Access, internet browsing — and gradually I fell in
-              love with programming and web development.
-            </p>
+              {/* Quote */}
+              <div className="mb-8">
 
-            <p className="text-gray-400 text-lg leading-relaxed">
-              Currently, I'm learning React, Next.js, MongoDB, Node.js,
-              Tailwind CSS, and exploring the MERN stack deeply through
-              Programming Hero.
-            </p>
+                <span className="text-pink-500 text-6xl font-black">
+                  "
+                </span>
 
-          </div>
-
-          {/* Highlight Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-
-            {/* Card 1 */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-6 text-center hover:border-pink-500 transition duration-300"
-            >
-              <div className="text-5xl text-pink-500 flex justify-center mb-4">
-                <FaLaptopCode />
+                <h3 className="text-3xl md:text-4xl font-bold leading-snug mt-2">
+                  Building modern web experiences with creativity,
+                  curiosity, and passion.
+                </h3>
               </div>
 
-              <h4 className="text-xl font-bold mb-3">
-                10+ Projects
-              </h4>
+              {/* Story */}
+              <div className="space-y-6 text-lg leading-relaxed">
 
-              <p className="text-gray-400 text-sm">
-                Built modern responsive projects during my learning journey.
-              </p>
-            </motion.div>
+                <p className="text-gray-300">
+                  Hi! I'm{" "}
+                  <span className="text-pink-500 font-semibold">
+                    Farjana Aktar Monisha
+                  </span>
+                  , a passionate frontend developer and Mathematics student at
+                  Carmichael College.
+                </p>
 
-            {/* Card 2 */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-6 text-center hover:border-pink-500 transition duration-300"
-            >
-              <div className="text-5xl text-pink-500 flex justify-center mb-4">
-                <FaCode />
+                <p className="text-gray-400">
+                  My programming journey started from basic computer learning —
+                  Excel, PowerPoint, Access, and internet browsing —
+                  before I discovered my passion for web development.
+                </p>
+
+                <p className="text-gray-400">
+                  Now I spend most of my time learning and building modern web
+                  applications using React, Next.js, Tailwind CSS,
+                  MongoDB, and Node.js.
+                </p>
+
+                <p className="text-gray-400">
+                  I enjoy creating beautiful UI designs, smooth user experiences,
+                  and interactive websites that feel modern and alive.
+                </p>
+
+                <p className="text-gray-400">
+                  Outside programming, I love reading detective stories,
+                  thrillers, science fiction, and travel literature.
+                </p>
               </div>
+            </div>
+          </motion.div>
 
-              <h4 className="text-xl font-bold mb-3">
-                MERN Learner
-              </h4>
+          {/* RIGHT CARDS */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="grid sm:grid-cols-2 gap-6"
+          >
 
-              <p className="text-gray-400 text-sm">
-                Continuously learning modern web technologies and backend development.
-              </p>
-            </motion.div>
+            {cards.map((card, index) => (
 
-            {/* Card 3 */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-6 text-center hover:border-pink-500 transition duration-300"
-            >
-              <div className="text-5xl text-pink-500 flex justify-center mb-4">
-                <FaBookOpen />
-              </div>
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -10,
+                  scale: 1.03,
+                }}
+                className="group relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-7 overflow-hidden hover:border-pink-500 transition duration-500"
+              >
 
-              <h4 className="text-xl font-bold mb-3">
-                Book Lover
-              </h4>
+                {/* Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 to-purple-500/0 group-hover:from-pink-500/10 group-hover:to-purple-500/10 transition duration-500"></div>
 
-              <p className="text-gray-400 text-sm">
-                Enjoy detective stories, thrillers, science fiction, and travel literature.
-              </p>
-            </motion.div>
+                {/* Icon */}
+                <div className="relative text-5xl text-pink-500 mb-6">
+                  {card.icon}
+                </div>
 
-            {/* Card 4 */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#111827] border border-white/10 rounded-2xl p-6 text-center hover:border-pink-500 transition duration-300"
-            >
-              <div className="text-5xl text-pink-500 flex justify-center mb-4">
-                <FaRocket />
-              </div>
+                {/* Title */}
+                <h3 className="relative text-2xl font-bold mb-4">
+                  {card.title}
+                </h3>
 
-              <h4 className="text-xl font-bold mb-3">
-                Future Goal
-              </h4>
-
-              <p className="text-gray-400 text-sm">
-                To become a skilled full stack developer and build impactful products.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
+                {/* Desc */}
+                <p className="relative text-gray-400 leading-relaxed">
+                  {card.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
