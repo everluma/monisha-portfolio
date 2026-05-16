@@ -17,61 +17,67 @@ import {
   SiFirebase,
 } from "react-icons/si";
 
-const skills = [
+const skillCategories = [
   {
-    name: "HTML",
-    level: "95%",
-    icon: <FaHtml5 />,
+    title: "Frontend",
+    skills: [
+      {
+        name: "HTML",
+        icon: <FaHtml5 />,
+      },
+      {
+        name: "CSS",
+        icon: <FaCss3Alt />,
+      },
+      {
+        name: "JavaScript",
+        icon: <FaJs />,
+      },
+      {
+        name: "React",
+        icon: <FaReact />,
+      },
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs />,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: <SiTailwindcss />,
+      },
+    ],
   },
+
   {
-    name: "CSS",
-    level: "90%",
-    icon: <FaCss3Alt />,
+    title: "Backend",
+    skills: [
+      {
+        name: "Node.js",
+        icon: <FaNodeJs />,
+      },
+      {
+        name: "Express.js",
+        icon: <SiExpress />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb />,
+      },
+      {
+        name: "Firebase",
+        icon: <SiFirebase />,
+      },
+    ],
   },
+
   {
-    name: "JavaScript",
-    level: "85%",
-    icon: <FaJs />,
-  },
-  {
-    name: "React",
-    level: "85%",
-    icon: <FaReact />,
-  },
-  {
-    name: "Next.js",
-    level: "75%",
-    icon: <SiNextdotjs />,
-  },
-  {
-    name: "Tailwind CSS",
-    level: "90%",
-    icon: <SiTailwindcss />,
-  },
-  {
-    name: "Node.js",
-    level: "70%",
-    icon: <FaNodeJs />,
-  },
-  {
-    name: "Express.js",
-    level: "65%",
-    icon: <SiExpress />,
-  },
-  {
-    name: "MongoDB",
-    level: "75%",
-    icon: <SiMongodb />,
-  },
-  {
-    name: "Firebase",
-    level: "80%",
-    icon: <SiFirebase />,
-  },
-  {
-    name: "GitHub",
-    level: "85%",
-    icon: <FaGithub />,
+    title: "Tools & Platforms",
+    skills: [
+      {
+        name: "GitHub",
+        icon: <FaGithub />,
+      },
+    ],
   },
 ];
 
@@ -81,7 +87,7 @@ const Skills = () => {
       id="skills"
       className="py-24 px-6"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Title */}
         <motion.div
@@ -89,7 +95,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2 className="text-5xl font-bold">
             My <span className="text-pink-500">Skills</span>
@@ -98,49 +104,50 @@ const Skills = () => {
           <div className="w-28 h-1 bg-pink-500 mx-auto mt-4 rounded-full"></div>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Categories */}
+        <div className="space-y-16">
 
-          {skills.map((skill, index) => (
+          {skillCategories.map((category, categoryIndex) => (
 
             <motion.div
-              key={index}
+              key={categoryIndex}
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-lg hover:border-pink-500 transition duration-300"
             >
 
-              {/* Top */}
-              <div className="flex items-center justify-between mb-4">
+              {/* Category Title */}
+              <h3 className="text-3xl font-bold mb-8 text-pink-400">
+                {category.title}
+              </h3>
 
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl text-pink-500">
-                    {skill.icon}
-                  </span>
+              {/* Skills Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-                  <h3 className="text-xl font-semibold">
-                    {skill.name}
-                  </h3>
-                </div>
+                {category.skills.map((skill, index) => (
 
-                <span className="text-pink-500 font-bold">
-                  {skill.level}
-                </span>
-              </div>
+                  <motion.div
+                    key={index}
+                    whileHover={{
+                      scale: 1.08,
+                      rotate: 2,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center backdrop-blur-lg hover:border-pink-500 hover:shadow-pink-500/30 hover:shadow-2xl transition duration-300"
+                  >
 
-              {/* Progress Bar */}
-              <div className="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                    {/* Icon */}
+                    <div className="text-6xl text-pink-500 mb-5">
+                      {skill.icon}
+                    </div>
 
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: skill.level }}
-                  transition={{ duration: 1.5 }}
-                  viewport={{ once: true }}
-                  className="h-full bg-pink-500 rounded-full"
-                ></motion.div>
-
+                    {/* Name */}
+                    <h4 className="text-xl font-semibold">
+                      {skill.name}
+                    </h4>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}
