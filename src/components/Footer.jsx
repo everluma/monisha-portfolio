@@ -8,23 +8,23 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-black py-12">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#050816] py-14">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500 opacity-10 blur-[120px] rounded-full"></div>
+      {/* Glow Effects */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500/10 blur-[120px] rounded-full"></div>
 
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500 opacity-10 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* Main Content */}
+        {/* Main */}
         <div className="flex flex-col items-center text-center">
 
           {/* Name */}
-          <h2 className="text-4xl font-bold">
-            Farjana Aktar{" "}
-            <span className="text-pink-500">
-              Monisha
+          <h2 className="text-4xl md:text-5xl font-black">
+
+            <span className="bg-gradient-to-r from-pink-500 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+              Farjana Aktar Monisha
             </span>
           </h2>
 
@@ -33,46 +33,68 @@ const Footer = () => {
             Frontend Developer • MERN Stack Learner
           </p>
 
-          {/* Small Description */}
+          {/* Description */}
           <p className="text-gray-500 mt-5 max-w-2xl leading-relaxed">
-            Passionate about building beautiful, modern, and responsive
-            web experiences with creativity, clean design, and continuous learning.
+            Passionate about building modern, responsive,
+            and visually engaging web experiences with creativity and clean UI.
           </p>
 
+          {/* Navigation */}
+          <div className="flex flex-wrap justify-center gap-6 mt-8 text-gray-400">
+
+            {[
+              "Home",
+              "About",
+              "Skills",
+              "Education",
+              "Projects",
+              "Contact",
+            ].map((item, index) => (
+
+              <a
+                key={index}
+                href={`#${item.toLowerCase()}`}
+                className="hover:text-pink-500 transition duration-300"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+
           {/* Social Icons */}
-          <div className="flex gap-6 mt-8 text-2xl">
+          <div className="flex gap-5 mt-10">
 
-            <a
-              href="https://github.com/everluma"
-              target="_blank"
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500 hover:border-pink-500 hover:scale-110 transition duration-300"
-            >
-              <FaGithub />
-            </a>
+            {[
+              {
+                icon: <FaGithub />,
+                link: "https://github.com/everluma",
+              },
 
-            <a
-              href="https://www.linkedin.com/in/farjana-monisha"
-              target="_blank"
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500 hover:border-pink-500 hover:scale-110 transition duration-300"
-            >
-              <FaLinkedin />
-            </a>
+              {
+                icon: <FaLinkedin />,
+                link: "https://www.linkedin.com/in/farjana-monisha",
+              },
 
-            <a
-              href="https://x.com/Farjana_Monisha"
-              target="_blank"
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500 hover:border-pink-500 hover:scale-110 transition duration-300"
-            >
-              <FaTwitter />
-            </a>
+              {
+                icon: <FaTwitter />,
+                link: "https://x.com/Farjana_Monisha",
+              },
 
-            <a
-              href="https://www.facebook.com/farjanaaktar.monisha"
-              target="_blank"
-              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500 hover:border-pink-500 hover:scale-110 transition duration-300"
-            >
-              <FaFacebook />
-            </a>
+              {
+                icon: <FaFacebook />,
+                link: "https://www.facebook.com/farjanaaktar.monisha",
+              },
+            ].map((social, index) => (
+
+              <a
+                key={index}
+                href={social.link}
+                target="_blank"
+                className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl hover:bg-pink-500 hover:border-pink-500 hover:scale-110 transition duration-300"
+              >
+                {social.icon}
+              </a>
+            ))}
           </div>
 
           {/* Divider */}
@@ -80,7 +102,14 @@ const Footer = () => {
 
           {/* Bottom */}
           <p className="text-gray-500 text-sm flex items-center gap-2">
-            Made with <FaHeart className="text-pink-500" /> by Farjana Aktar Monisha
+
+            Made with{" "}
+
+            <span className="text-pink-500 animate-pulse">
+              <FaHeart />
+            </span>
+
+            by Farjana Aktar Monisha
           </p>
 
           <p className="text-gray-600 text-xs mt-3">
