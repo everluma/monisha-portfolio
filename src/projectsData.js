@@ -1,9 +1,9 @@
-import tilesGallery from "./assets/projects/tiles-gallery.jpeg";
-import keenKeeper from "./assets/projects/keen-keeper.jpeg";
-import digiTools from "./assets/projects/digitools.jpeg";
-import issueTracker from "./assets/projects/github-issue-tracker.jpeg";
-import calendar2026 from "./assets/projects/calendar-2026.jpeg";
-import ecommerceShop from "./assets/projects/mini-e-commerce-shop.jpeg";
+import tilesGallery from "./assets/Projects/tiles-gallery.jpeg";
+import keenKeeper from "./assets/Projects/keen-keeper.jpeg";
+import digiTools from "./assets/Projects/digitools.jpeg";
+import issueTracker from "./assets/Projects/github-issue-tracker.jpeg";
+import calendar2026 from "./assets/Projects/calendar-2026.jpeg";
+import ecommerceShop from "./assets/Projects/mini-e-commerce-shop.jpeg";
 
 
 
