@@ -19,6 +19,15 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center px-6 pt-32 relative overflow-hidden"
     >
 
+      {/* Premium Gradient Background */}
+<div className="absolute inset-0">
+
+  <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-pink-500/20 via-purple-500/10 to-transparent"></div>
+
+  <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-black via-[#050816] to-transparent"></div>
+
+</div>
+
       {/* Background Glow */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-pink-500 opacity-20 blur-[120px] rounded-full"></div>
 
