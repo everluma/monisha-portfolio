@@ -115,7 +115,8 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href="/Farjana_Aktar_Monisha_Resume.pdf"
+              download
               className="flex items-center gap-3 bg-gradient-to-r from-pink-500 to-purple-500 hover:shadow-pink-500/40 hover:shadow-2xl px-7 py-4 rounded-full font-semibold transition duration-300"
             >
               <FaDownload />
@@ -158,6 +159,7 @@ const Hero = () => {
                 }}
                 href={social.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg flex items-center justify-center text-2xl text-gray-300 hover:text-pink-500 hover:border-pink-500 transition duration-300"
               >
                 {social.icon}
@@ -208,7 +210,7 @@ const Hero = () => {
           <div className="relative">
 
             {/* Rotating Border */}
-            <div className="absolute -inset-4 rounded-[40px] bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 blur-xl opacity-60 animate-spin-slow"></div>
+           <div className="absolute -inset-4 rounded-[40px] bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 blur-xl opacity-60 animate-spin-slow"></div>
 
             {/* Card */}
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-3 rounded-[40px] overflow-hidden">
@@ -216,7 +218,7 @@ const Hero = () => {
               <img
                 src={profile}
                 alt="Monisha"
-                className="w-[320px] md:w-[420px] rounded-[30px] object-cover"
+                className="w-[320px] md:w-[420px] h-[420px] md:h-[540px] rounded-[30px] object-cover"
               />
 
               {/* Overlay */}
